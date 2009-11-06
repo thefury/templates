@@ -62,7 +62,7 @@ remote_file "app/models/user.rb", "user.rb"
 run "rm app/controllers/users_controller.rb"
 remote_file "app/controllers/users_controller.rb", "users_controller.rb"
 
-remote_file "app/views/users/_form.erb", "users__form.rb"
+remote_file "app/views/users/_form.erb", "users_form.erb"
 remote_file "app/views/users/edit.html.erb", "users_edit.html.erb"
 remote_file "app/views/users/new.html.erb", "users_new.html.erb"
 remote_file "app/views/users/show.html.erb", "users_show.html.erb"
