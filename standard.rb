@@ -30,6 +30,7 @@ gem("rspec", :version => ">=1.2.2")
 gem("rspec-rails", :version => ">=1.2.2")
 gem("webrat", :version => ">=0.4.3")
 gem("cucumber", :version => ">=0.2.2")
+gem("haml")
 
 rake "gems:install", :sudo => true
 
@@ -95,6 +96,10 @@ commit "AuthLogic added and configured"
 # ----------------------------------------
 # cucmber setup
 # ----------------------------------------
+generate :rspec
+generate :cucumber
+
+commit "Added rspec and cucumber"
 
 # ----------------------------------------
 # test helpers setup
