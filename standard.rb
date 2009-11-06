@@ -33,7 +33,7 @@ gem("cucumber", :version => ">=0.2.2")
 gem("haml")
 
 rake "gems:install", :sudo => true
-
+rake "gems:install"
 
 # ----------------------------------------
 # authlogic setup
