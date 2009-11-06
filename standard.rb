@@ -5,6 +5,9 @@ def commit(message)
 end
 
 
+puts open("http://google.com").read
+exit
+
 # Create the project
 run "gem sources -a http://gems.github.com"
 run "rm public/index.html"
