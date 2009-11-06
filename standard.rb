@@ -136,7 +136,14 @@ generate(:model,
          "password_salt:string",
          "persistence_token:string",
          "single_access_token:string",
-         "perishable_token:string")
+         "perishable_token:string",
+         "login_count:integer",
+         "failed_login_count:integer",
+         "last_request_at:datetime",
+         "current_login_at:datetime",
+         "last_login_at:datetime",
+         "current_login_ip:string",
+         "last_login_ip:string")
 run "rm app/models/user.rb"
 file "app/models/user.rb", <<-USER
 class User < ActiveRecord::Base
@@ -191,6 +198,9 @@ END
 file "app/views/users/_form.erb", <<-END
 <%= form.label :login %><br />
 <%= form.text_field :login %><br />
+<br />
+<%= form.label :email %><br />
+<%= form.text_field :email %><br />
 <br />
 <%= form.label :password, form.object.new_record? ? nil : "Change password" %><br />
 <%= form.password_field :password %><br />
