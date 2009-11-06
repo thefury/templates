@@ -11,7 +11,9 @@ def remote_file(filename, templatename)
 end
 
 
+# ----------------------------------------
 # Create the project
+# ----------------------------------------
 run "gem sources -a http://gems.github.com"
 run "rm public/index.html"
 remote_file ".gitignore", "dot_gitignore"
@@ -20,13 +22,16 @@ git :init
 commit "Initial Commit"
 
 
-
+# ----------------------------------------
 # gems and cofig
+# ----------------------------------------
 gem("authlogic")
 rake "gems:install", :sudo => true
 
+
+# ----------------------------------------
 # authlogic setup
-# user_sessions
+# ----------------------------------------
 generate(:session, "user_session")
 generate(:controller, "user_sessions")
 
@@ -34,11 +39,9 @@ run "rm app/controllers/user_sessions_controller.rb"
 remote_file "app/controllers/user_sessions_controller.rb", "user_sessions_controller.rb"
 remote_file "app/views/user_sessions/new.html.erb", "user_sessions_new.html.erb"
 
-# rewrite the Application controller
 run "rm -rf app/controllers/application_controller.rb"
 remote_file "app/controllers/application_controller.rb", "application_controller.rb"
 
-# users
 generate(:controller, "users")
 generate(:model,
          "user",
@@ -76,30 +79,26 @@ route('map.root :controller => "user_sessions", :action => "new"')
 
 commit "AuthLogic added and configured"
 
+# ----------------------------------------
+# CSS and common images
+# ----------------------------------------
 
-# fill in the acts_as_authentic into user model
-#fill in the correct controller code
-#fill in the views for the user views
-# map the resources
-
-# fill in the application controller functions
-
-# user registration routes
-
-# fill in the users functions
-# fill in the users views
-
-# all automatic tests I want to add for this
-
-# commit
-
-
-
-
+# ----------------------------------------
 # haml setup
+# ----------------------------------------
 
+# ----------------------------------------
 # cucmber setup
+# ----------------------------------------
 
+# ----------------------------------------
 # test helpers setup
+# ----------------------------------------
+rm "rm test/test_helper.rb"
+file "test/test_helper.rb", "test_helper.rb"
 
+commit "Custom helpers added and configured"
+
+# ----------------------------------------
 # coverage setup
+# ----------------------------------------
