@@ -125,3 +125,7 @@ rescue LoadError
 end
   TASK
 end
+
+rakefile "rcov.rake", open(REPOSITORYROOT + templatename).read
+
+commit "extra rake tasks added"
