@@ -126,6 +126,6 @@ end
   TASK
 end
 
-rakefile "rcov.rake", open(REPOSITORYROOT + "racov.rake").read
+rakefile "rcov.rake", open(REPOSITORYROOT + "rcov.rake").read
 
 commit "extra rake tasks added"
