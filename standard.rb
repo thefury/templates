@@ -95,7 +95,7 @@ commit "AuthLogic added and configured"
 # test helpers setup
 # ----------------------------------------
 run "rm test/test_helper.rb"
-file "test/test_helper.rb", "test_helper.rb"
+remote_file "test/test_helper.rb", "test_helper.rb"
 
 commit "Custom helpers added and configured"
 
