@@ -30,6 +30,7 @@ gem("rspec", :lib => false,  :version => ">=1.2.2")
 gem("rspec-rails", :lib => false, :version => ">=1.2.2")
 gem("webrat", :lib => false, :version => ">=0.4.3")
 gem("cucumber", :lib => false, :version => ">=0.2.2")
+gem("jscruggs-metric_fu")
 gem("haml")
 
 rake "gems:install", :sudo => true
@@ -92,6 +93,7 @@ commit "AuthLogic added and configured"
 # ----------------------------------------
 # haml setup
 # ----------------------------------------
+# there is none now.
 
 # ----------------------------------------
 # cucmber setup
@@ -110,5 +112,13 @@ remote_file "test/test_helper.rb", "test_helper.rb"
 commit "Custom helpers added and configured"
 
 # ----------------------------------------
-# coverage setup
+# metrics setup
 # ----------------------------------------
+rakefile "metric_fu.rake" do
+  <<-TASK
+begin
+  require 'metric_fu'
+rescue LoadError
+end
+  TASK
+end
