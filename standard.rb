@@ -30,7 +30,7 @@ gem("rspec", :lib => false,  :version => ">=1.2.2")
 gem("rspec-rails", :lib => false, :version => ">=1.2.2")
 gem("webrat", :lib => false, :version => ">=0.4.3")
 gem("cucumber", :lib => false, :version => ">=0.2.2")
-gem("jscruggs-metric_fu")
+gem("jscruggs-metric_fu", :lib => false)
 gem("haml")
 
 rake "gems:install", :sudo => true
