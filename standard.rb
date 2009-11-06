@@ -26,10 +26,10 @@ commit "Initial Commit"
 # gems and cofig
 # ----------------------------------------
 gem("authlogic")
-gem("rspec", :version => ">=1.2.2")
-gem("rspec-rails", :version => ">=1.2.2")
-gem("webrat", :version => ">=0.4.3")
-gem("cucumber", :version => ">=0.2.2")
+gem("rspec", :lib => false,  :version => ">=1.2.2")
+gem("rspec-rails", :lib => false, :version => ">=1.2.2")
+gem("webrat", :lib => false, :version => ">=0.4.3")
+gem("cucumber", :lib => false, :version => ">=0.2.2")
 gem("haml")
 
 rake "gems:install", :sudo => true
