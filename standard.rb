@@ -1,23 +1,20 @@
+REPOSITORYROOT="http://github.com/thefury/templates/raw/master/"
 
 def commit(message)
   git :add => '.'
   git :commit => "-a -m '#{message}'"
 end
 
+def remote_file(filename, templatename)
+  value = open(REPOSITORYROOT + templatename).read
+  file filename, value
+end
 
-puts open("http://google.com").read
-exit
 
 # Create the project
 run "gem sources -a http://gems.github.com"
 run "rm public/index.html"
-file ".gitignore", <<-END
-.DS_Store
-log/*.log
-tmp/**/*
-config/database.yml
-db/*.sqlite3
-END
+remote_file ".gitignore", "dot_gitignore"
 
 git :init
 commit "Initial Commit"
