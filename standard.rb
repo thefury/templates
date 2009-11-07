@@ -93,6 +93,12 @@ commit "AuthLogic added and configured"
 # ----------------------------------------
 # CSS and common images
 # ----------------------------------------
+remote_file "public/stylesheets/ie.css", "ie.css"
+remote_file "public/stylesheets/print.css", "print.css"
+remote_file "public/stylesheets/screen.css", "screen.css"
+remote_file "public/stylesheets/site.css", "site.css"
+
+commit "Added blueprint stylesheets"
 
 # ----------------------------------------
 # haml setup
