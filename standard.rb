@@ -147,6 +147,10 @@ generate(:controller, "site")
 # copy over my own goodies
 remote_file("app/controllers/site_controller.rb", "site_controller.rb")
 remote_file("app/views/layouts/site.html.haml", "layout_site.html.haml")
+run 'echo "You can find me in app/views/site/index.html.haml" > app/views/site/index.html.haml'
+run 'echo "You can find me in app/views/site/privacy.html.haml" > app/views/site/privacy.html.haml'
+run 'echo "You can find me in app/views/site/terms.html.haml" > app/views/site/terms.html.haml'
+
 
 route('map.root :controller => "site", :action => "index"')
 route('map.privacy "/privacy", :controller => "site", :action => "privacy"')
