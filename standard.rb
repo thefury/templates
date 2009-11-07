@@ -86,9 +86,10 @@ rake "db:migrate"
 route('map.resource :account, :controller => "users"')
 route('map.resources :users')
 route('map.resource :user_session')
-route('map.root :controller => "user_sessions", :action => "new"')
+route('map.login "/login", :controller => "user_sessions", :action => "new"')
+route('map.logout "/logout", :controller => "user_sessions", :action => "destroy"')
 
-commit "AuthLogic added and configured"
+commit "AuthLogic added and configured initial routes"
 
 # ----------------------------------------
 # CSS and common images
@@ -137,3 +138,16 @@ end
 rakefile "rcov.rake", open(REPOSITORYROOT + "rcov_task.rake").read
 
 commit "extra rake tasks added"
+
+# ----------------------------------------
+# Custom Pages
+# ----------------------------------------
+generate(:controller, "site")
+
+# copy over my own goodies
+
+route('map.root :controller => "site"')
+route('map.privacy :controller => "site", :action => "privacy"')
+route('map.terms :controller => "site", :action => "terms"')
+
+commit "Added main site controller"
