@@ -104,6 +104,7 @@ commit "AuthLogic added and configured"
 # ----------------------------------------
 generate :rspec
 generate :cucumber
+run "touch features/factories.rb"
 
 commit "Added rspec and cucumber"
 
