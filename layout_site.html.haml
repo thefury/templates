@@ -1,8 +1,7 @@
 !!! 1.1
 %html
   %head
-    %title= @page_title ? "#{@page_title} | #{AppConfig['app_name']}" : AppConfig['app_name']
-    %meta{:name => "verify-v1", :content => "J6aJWbhtp7zmFYC8GS+Ll9DxKYqd/JM2c8vdriLpJho="}
+    %title Application Name
 
     = stylesheet_link_tag 'screen'
     = stylesheet_link_tag 'site'
@@ -11,28 +10,22 @@
     #document
       #header
         #headercontainer.container
-          #logo.column
-            = link_to(image_tag('logo.gif'), "http://backstagehq.com")
           #headernav
-            = link_to "About Backstage", about_url
-            &nbsp;|&nbsp;
-            = link_to 'Contact Us', contact_url
+            = link_to "login", login_url
+            or
+            = link_to 'register', register_url
 
       #headlinebar
         #headlinewrapper.container
           #headline
-            = yield :headlinebar
 
       #content.container.prepend-top
         = yield
 
       #footer.container.prepend-top
         #footernewsnav
-          Copyright &copy; 2009 Backstage
+          Copyright &copy; 2009 Trevor Oke
           &nbsp;|&nbsp;
           = link_to "Privacy Policy", privacy_url
           &nbsp;|&nbsp;
-          = link_to "Terms of Service", tos_url
-
-    - if RAILS_ENV != 'development'
-      = render :partial => 'shared/google_analytics'
+          = link_to "Terms of Service", terms_url
