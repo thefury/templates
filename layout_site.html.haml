@@ -10,10 +10,16 @@
     #document
       #header
         #headercontainer.container
+
           #headernav
-            = link_to "login", login_url
-            or
-            = link_to 'register', register_url
+            - if current_user
+              = link_to "profile", account_url
+              or
+              = link_to 'logout', logout_url
+            - else
+              = link_to "login", login_url
+              or
+              = link_to 'register', register_url
 
       #headlinebar
         #headlinewrapper.container
