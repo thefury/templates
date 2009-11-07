@@ -88,7 +88,7 @@ route('map.resources :users')
 route('map.resource :user_session')
 route('map.login "/login", :controller => "user_sessions", :action => "new"')
 route('map.logout "/logout", :controller => "user_sessions", :action => "destroy"')
-
+route('map.register "/register", :controller => "users", :action => "new"')
 commit "AuthLogic added and configured initial routes"
 
 # ----------------------------------------
@@ -145,9 +145,11 @@ commit "extra rake tasks added"
 generate(:controller, "site")
 
 # copy over my own goodies
+remote_file("app/controllers/site_controller.rb", "site_controller.rb")
+remote_file("app/views/layouts/site.html.haml", "layout_site.html.haml")
 
-route('map.root :controller => "site"')
-route('map.privacy :controller => "site", :action => "privacy"')
-route('map.terms :controller => "site", :action => "terms"')
+route('map.root :controller => "site", :action => "index"')
+route('map.privacy "/privacy", :controller => "site", :action => "privacy"')
+route('map.terms "/terms", :controller => "site", :action => "terms"')
 
 commit "Added main site controller"
