@@ -7,3 +7,6 @@ h2. Templates
 h3. Standard
 
 This is a standard web app with user login and registration.
+
+pre..
+  rails appname -m http://github.com/thefury/templates/raw/master/standard/standard.rb
