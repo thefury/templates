@@ -3,6 +3,7 @@ h2. Purpose
 This repository holds the public templates I use to create rails apps.
 
 h2. Templates
+
 h3. Standard
 
 This is a standard web app with user login and registration.
