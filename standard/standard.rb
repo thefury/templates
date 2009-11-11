@@ -1,4 +1,4 @@
-REPOSITORYROOT="http://github.com/thefury/templates/raw/master/standard"
+REPOSITORYROOT="http://github.com/thefury/templates/raw/master/standard/"
 
 def commit(message)
   git :add => '.'
